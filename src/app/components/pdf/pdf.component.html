@@ -1,0 +1,22 @@
+<button (click)="generatePDF()">Download PDF</button>
+
+<div class="dropdown-container">
+    <label for="userSelect" class="dropdown-label">Select a User:</label>
+    <select id="userSelect" class="dropdown" (change)="onUserSelect($event)">
+        <option value="" selected disabled>Choose a user</option>
+        <option *ngFor="let user of users" [value]="user.id">
+            {{ user.fullName }}
+        </option>
+    </select>
+</div>
+
+<div #pdfContent>
+    <h1>Invoice</h1>
+    <p>Customer Name: {{ invoiceData?.customerName }}</p>
+    <p>Invoice Number: {{ invoiceData?.invoiceNumber }}</p>
+    <ul>
+        <li *ngFor="let item of invoiceData?.items">
+            {{ item.name }} - ${{ item.price }}
+        </li>
+    </ul>
+</div>

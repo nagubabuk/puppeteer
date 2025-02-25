@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.3.0",
-    "@angular/common": "^17.3.0",
+    "@angular/common": "^17.3.12",
     "@angular/compiler": "^17.3.0",
     "@angular/core": "^17.3.0",
     "@angular/forms": "^17.3.0",
@@ -21,7 +21,10 @@
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@angular/ssr": "^17.3.12",
+    "@apollo/client": "^3.0.0",
+    "apollo-angular": "^10.0.1",
     "express": "^4.18.2",
+    "graphql": "^16.10.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

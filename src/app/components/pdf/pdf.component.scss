@@ -1,0 +1,25 @@
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 300px;
+}
+
+.dropdown-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease-in-out;
+}
+
+.dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+}
