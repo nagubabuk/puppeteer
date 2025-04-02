@@ -69,6 +69,17 @@ export class PdfComponent {
       });
   }
 
+  sendData(){
+    this.pdfService.sendData().subscribe({
+      next: (result) => {
+        console.log('Response:', result);
+      },
+      error: (error) => {
+        console.error('Error:', error);
+      }
+    })
+  }
+  
 
 
   downloadPDF(pdfUrl: string) {

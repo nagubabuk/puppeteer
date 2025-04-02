@@ -20,6 +20,11 @@ export const GENERATE_PDF_QUERY = gql`
   }
 `;
 
+const SEND_COMPLEX_DATA = gql`
+ mutation SendComplexData($data: ComplexDataInput!) {
+  sendComplexData(data: $data)
+}
+`;
 @Injectable({
   providedIn: 'root'
 })
@@ -44,6 +49,27 @@ export class PdfService {
       map(result => result.data.generateAccountStatement)
     );
   }
+
+
+  sendData() {
+    // Create dynamic data structure
+    const complexData = {
+      options: { returnPdf: true, withTableContent: true },
+      screenshotUrls: { url: 'pres' },
+      sessionData: { gdt: { errors: { erroutApp: false, data: 'hello failed' } } },
+      windowData: { height: 340, width: 543 },
+      windowSize: { height: 340, width: 543 }
+    };
+
+   return this.apollo.mutate({
+      mutation: SEND_COMPLEX_DATA,
+      variables: {
+        data: complexData
+      }
+    });
+  }
+
+
 
   downloadPdf(base64Data: string, fileName: string = 'account-statement.pdf'): void {
     // Convert base64 to blob
